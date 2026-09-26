@@ -1,250 +1,314 @@
 \version "2.26.0"
 
 \header {
-  title = "Reflexos em Fá"
-  subtitle = "Dueto para Dois Clarinetes em Sib"
-  composer = "Composição Original"
+  title = "Saudade de Curitiba"
+  subtitle = "Choro Tradicional"
+  composer = "Desafio de Composição (Gemini)"
+  instrument = "Clarinete em Sib, Violão de 7 Cordas e Pandeiro"
   tagline = ##f
 }
 
 global = {
-  \time 3/4
+  \time 2/4
+  \tempo "Chorinho" 4 = 110
+}
+
+% ==========================================
+% CLARINETE EM SIB (Escrito uma 2M acima)
+% ==========================================
+
+clariIntro = \relative c' {
+  \key e \minor
+  r8 b'16( c) d( c) b( a) |
+  g16( fis) e8~ e4 |
+  r8 c'16( b) a( g) fis( e) |
+  dis16( e) fis( g) a( b) c( d) |
+}
+
+clariAOne = \relative c'' {
+  e8. b16 g8. e16 |
+  d'8. b16 g8. e16 |
+  cis'16( ais) fis( e) cis( e) fis( ais) |
+  c!16( b) a( g) fis8 b, |
+  c'8. a16 e8. c16 |
+  d'8. c16 a8. d16 |
+  b16( a) g( fis) g( b) d( g) |
+  fis16( e) dis( cis) b8 b |
+}
+
+clariATwo = \relative c'' {
+  e8. b16 g8. e16 |
+  d'8. b16 g8. e16 |
+  cis'16( ais) fis( e) cis( e) fis( ais) |
+  c!16( b) a( g) fis8 b, |
+  c'8. a16 e8. c16 |
+  b'16( a) g( fis) e( dis) c( b) |
+  e,16( fis) g( a) b( c) cis( dis) |
+  e8 r d,4\f |
+}
+
+clariBOne = \relative c'' {
+  \key g \major
+  b'8. d16 b8. g16 |
+  f'16( e) d( c) b( a) gis( f) |
+  e8 a c, e |
+  a8. d,16 d4 |
+  b'8. d16 b8. g16 |
+  e'16( d) c( b) a( g) fis( e) |
+  c'8 a e c |
+  fis8. d16 d4 |
+}
+
+clariBTwo = \relative c'' {
+  b'8. d16 b8. g16 |
+  f'16( e) d( c) b( a) gis( f) |
+  e8 a c, e |
+  a16( g) fis( e) d( c) b( a) |
+  g8 b d g |
+  e8 c g e |
+  fis'16( e) dis( cis) b( a) g( fis) |
+  e8 r b4\mf |
+  \key e \minor
+}
+
+clariAThree = \relative c'' {
+  e8. b16 g8. e16 |
+  d'8. b16 g8. e16 |
+  cis'16( ais) fis( e) cis( e) fis( ais) |
+  c!16( b) a( g) fis8 b, |
+  c'8. a16 e8. c16 |
+  b'16( a) g( fis) e( dis) c( b) |
+  e,16( fis) g( a) b( c) cis( dis) |
+  e8 r b4\f |
+}
+
+clariCOne = \relative c'' {
+  \key e \major
+  gis'8. b16 gis8. e16 |
+  eis'16( dis) cis( b) a( gis) fisis( eis) |
+  fis8 a cis, fis |
+  dis8. b16 b4 |
+  gis'8. b16 gis8. e16 |
+  fisis'16( gis) fis( e) dis( cis) b( a) |
+  gis8 cis e, gis |
+  ais16( b) cis( b) a( gis) fis( dis) |
+}
+
+clariCTwo = \relative c'' {
+  gis'8. b16 gis8. e16 |
+  eis'16( dis) cis( b) a( gis) fisis( eis) |
+  fis8 a cis, fis |
+  dis16( cis) b( a) gis( fis) e( dis) |
+  e8 gis b e |
+  gis16( fis) e( dis) cis( b) a( fis) |
+  e8 b' gis e |
+  dis16( e) fis( g) a( b) c( d) |
+  \key e \minor
+}
+
+clariCoda = \relative c'' {
+  e8. b16 g8. e16 |
+  c'16( b) a( g) fis( e) dis( c) |
+  b8 dis fis a |
+  g16( e) b( g) e8 r |
+}
+
+clarinet = {
+  \transposition bes
+  \clariIntro
+  \clariAOne
+  \clariATwo
+  \clariBOne
+  \clariBTwo
+  \clariAOne
+  \clariAThree
+  \clariCOne
+  \clariCTwo
+  \clariAOne
+  \clariCoda
+}
+
+% ==========================================
+% VIOLÃO DE 7 CORDAS (Concert Pitch)
+% ==========================================
+
+violaoIntro = \relative c {
+  \key d \minor
+  a,8 <cis g' bes> a, <cis g' bes> |
+  d,8 <f a d> c, <f a d> |
+  b,,8 <d gis d'> a,, <cis g' cis> |
+  d,16( e, f, g, a, bes, b, cis) |
+}
+
+violaoAOne = \relative c {
+  d,8 <f a d> d, <f a d> |
+  c,8 <f a d> c, <f a d> |
+  b,,8 <e gis d'> b,, <e gis d'> |
+  a,,16( bes,, a,, gis,, a,, b,, cis, d,) |
+  g,,8 <f bes d> g,, <f bes d> |
+  c,8 <e bes' d> c, <e bes' d> |
+  f,,8 <e a c> a,, <e a c> |
+  e,8 <g bes d> a,, <g cis' e> |
+}
+
+violaoATwo = \relative c {
+  d,8 <f a d> d, <f a d> |
+  c,8 <f a d> c, <f a d> |
+  b,,8 <e gis d'> b,, <e gis d'> |
+  a,,16( b,, cis, d, e, f, g, a,) |
+  bes,8 <d g bes> bes, <d g bes> |
+  a,8 <cis g' a> a, <cis g' a> |
+  d,16( e, f, g, a, bes, b, c) |
+  d,8 <f a d> c, <e bes' c> |
+}
+
+violaoBOne = \relative c {
   \key f \major
-  \tempo "Andante cantabile" 4 = 72
+  f,8 <a c f> f, <a c f> |
+  fis,8 <a c ees> fis, <a c ees> |
+  g,8 <bes d g> d, <bes d g> |
+  c,16( d, e, f, g, a, bes, b,) |
+  c8 <f a c> f, <f a c> |
+  d,8 <fis c' d> d, <fis c' d> |
+  g,8 <bes d g> d, <bes d g> |
+  c,16( d, e, f, g, a, bes, b,) |
 }
 
-clarinetOne = \relative c'' {
-  \global
-  
-  % Introdução (Compassos 1-8)
-  c2.\p\( |
-  a2.\) |
-  bes2\( g4 |
-  c2.\) |
-  d2\( bes4 |
-  c2 a4 |
-  g2.\> ~ |
-  g2.\)\! |
-  
-  % Tema Principal A (Compassos 9-16)
-  a4.\mp( bes8 c4) |
-  f,2( a4) |
-  g4.( a8 bes4) |
-  e,2( g4) |
-  f4( a c) |
-  d4.( c8 bes4) |
-  a4( c f,) |
-  g2. |
-  
-  % Tema Principal A - Inversão de Papéis (Compassos 17-24)
-  c8\mf( f, c' f, c' f,) |
-  c'8( f, c' f, c' f,) |
-  d'8( g, d' g, d' g,) |
-  bes8( c, bes' c, bes' c,) |
-  a'8( f c f a f) |
-  bes8( f d f bes f) |
-  g8( e c e g e) |
-  f8( a c a f4) |
-  
-  % Desenvolvimento (Compassos 25-32) - Modulação
-  e'4.\f( f8 g4) |
-  c,2( e4) |
-  d4.( e8 f4) |
-  b,2( d4) |
-  c4( e g) |
-  a4.( g8 f4) |
-  e4( d c) |
-  d2. |
-  
-  % Desenvolvimento (Compassos 33-40) - Diálogo / Contraponto
-  a4-.\p c-. a-. |
-  f2. |
-  r4 bes,-. d-. |
-  g2. |
-  cis'4-.\< e-. cis-. |
-  a2. |
-  d4( f a |
-  g4 f e) |
-  
-  % Pedal de Preparação (Compassos 41-48)
-  d8\f( f a f d f) |
-  b,8( d g d b d) |
-  c8( e g e c e) |
-  a,8( c f c a c) |
-  bes8\dim( d f d bes d) |
-  g,8( bes d bes g bes) |
-  g8( bes c bes g bes) |
-  g2.\p |
-  
-  % Reexposição (Compassos 49-56)
-  a4.\mf( bes8 c4) |
-  f,4.( g8 a4) |
-  g4.( a8 bes4) |
-  e,4.( f8 g4) |
-  f4( a c) |
-  d4.( c8 bes4) |
-  a4( c f,) |
-  g2. |
-  
-  % Reexposição - Continuação (Compassos 57-64)
-  c4\f( a f) |
-  c'4( a f) |
-  d'4( bes g) |
-  c4( bes g) |
-  a8( f a f a f) |
-  bes8( f bes f bes f) |
-  g8( e c e g e) |
-  f8( a c a f4) |
-  
-  % Transição para Coda (Compassos 65-68)
-  d'4.( c8 bes4) |
-  c4.( bes8 a4) |
-  bes4.( a8 g4) |
-  a2. |
-  
-  % Coda (Compassos 69-80)
-  a4.\mp( bes8 c4) |
-  f,2. |
-  g4.\>( a8 bes4) |
-  e,2.\! |
-  f4\p r2 |
-  a4 r2 |
-  c4 r2 |
-  d2.\>( |
-  c2. |
-  bes2. |
-  a2.)\pp ~ |
-  a2. \bar "|."
+violaoBTwo = \relative c {
+  f,8 <a c f> f, <a c f> |
+  fis,8 <a c ees> fis, <a c ees> |
+  g,8 <bes d g> d, <bes d g> |
+  c,16( bes,, a,, g,, f,, e,, d,, c,,) |
+  f,,8 <a, c f> a,, <a, c f> |
+  d,8 <f a d> c, <f a d> |
+  b,,8 <d gis d'> a,, <cis g' cis> |
+  d,8 d, a,,16( bes,, b,, cis,) |
+  \key d \minor
 }
 
-clarinetTwo = \relative c' {
-  \global
-  
-  % Introdução (Compassos 1-8)
-  f4\p\( c f\) |
-  c4\( f a\) |
-  g4\( d g\) |
-  e4\( g c\) |
-  f,4\( bes d\) |
-  f,4\( a c\) |
-  c,4\( e g\> |
-  c,2.\)\! |
-  
-  % Tema Principal A (Compassos 9-16)
-  f8\mp( a c a c a) |
-  f8( a c a c a) |
-  c,8( g' bes g bes g) |
-  c,8( g' bes g bes g) |
-  f8( a c a c a) |
-  bes,8( f' bes f bes f) |
-  f8( a c a f a) |
-  c,8( e g e c4) |
-  
-  % Tema Principal A - Inversão de Papéis (Compassos 17-24)
-  a'4.\mf( bes8 c4) |
-  f,2( a4) |
-  g4.( a8 bes4) |
-  e,2( g4) |
-  f4( a c) |
-  d4.( c8 bes4) |
-  c4( bes g) |
-  f2. |
-  
-  % Desenvolvimento (Compassos 25-32) - Modulação
-  c8\f( e g e g e) |
-  c8( e g e g e) |
-  b8( d g d g d) |
-  b8( d g d g d) |
-  c8( e g e g e) |
-  c8( f a f a f) |
-  b,8( d g d g d) |
-  c8( e g e c4) |
-  
-  % Desenvolvimento (Compassos 33-40) - Diálogo / Contraponto
-  r4 f,-.\p a-. |
-  d2. |
-  g,4-. bes-. g-. |
-  e2. |
-  a4-.\< cis-. a-. |
-  f2. |
-  d'8( f a f d f) |
-  a,8( cis e cis a4) |
-  
-  % Pedal de Preparação (Compassos 41-48)
-  d4\f( f a) |
-  g4( b d) |
-  c,4( e g) |
-  f4( a c) |
-  bes,4\dim( d f) |
-  g4( bes d) |
-  c,4( e g) |
-  c,2.\p |
-  
-  % Reexposição (Compassos 49-56)
-  f8\mf( a c a c a) |
-  f8( a c a c a) |
-  c,8( g' bes g bes g) |
-  c,8( g' bes g bes g) |
-  f8( a c a c a) |
-  bes,8( f' bes f bes f) |
-  f8( a c a f a) |
-  c,8( e g e c4) |
-  
-  % Reexposição - Continuação (Compassos 57-64)
-  a'4.\f( bes8 c4) |
-  f,2( a4) |
-  g4.( a8 bes4) |
-  e,2( g4) |
-  f4( a c) |
-  d4.( c8 bes4) |
-  c4( bes g) |
-  f2. |
-  
-  % Transição para Coda (Compassos 65-68)
-  bes,8( f' bes f bes f) |
-  a,8( f' c' f, c' f,) |
-  g,8( e' bes' e, bes' e,) |
-  f,8( c' a' c, a'4) |
-  
-  % Coda (Compassos 69-80)
-  f8\mp( a c a c a) |
-  f8( a c a c a) |
-  c,8\>( g' bes g bes g) |
-  c,8( g' bes g bes g)\! |
-  f8\p( a c a c a) |
-  f8( a c a c a) |
-  f8( a c a c a) |
-  bes,8\>( f' bes f bes f) |
-  c8( g' bes g bes g) |
-  c,8( e g e g e) |
-  f2.\pp ~ |
-  f2. \bar "|."
+violaoAThree = \relative c {
+  d,8 <f a d> d, <f a d> |
+  c,8 <f a d> c, <f a d> |
+  b,,8 <e gis d'> b,, <e gis d'> |
+  a,,16( b,, cis, d, e, f, g, a,) |
+  bes,8 <d g bes> bes, <d g bes> |
+  a,8 <cis g' a> a, <cis g' a> |
+  d,16( e, f, g, a, bes, b, c) |
+  d,8 d, a,,4 |
 }
+
+violaoCOne = \relative c {
+  \key d \major
+  d,8 <fis a d> d, <fis a d> |
+  b,,8 <dis a' c> b,, <dis a' c> |
+  e,8 <g b e> b,, <g b e> |
+  a,,16( b,, cis, d, e, fis, g, gis,) |
+  a,8 <d fis a> d, <d fis a> |
+  fis,8 <ais, e' fis> fis, <ais, e' fis> |
+  b,,8 <d fis b> f,, <d fis b> |
+  e,,8 <d gis d'> a,, <cis g' cis> |
+}
+
+violaoCTwo = \relative c {
+  d,8 <fis a d> d, <fis a d> |
+  b,,8 <dis a' c> b,, <dis a' c> |
+  e,8 <g b e> b,, <g b e> |
+  a,,16( g,, fis,, e,, d,, cis,, d,, e,,) |
+  d,,8 <fis, a, d> fis,, <fis, a, d> |
+  e,,8 <g, b, e> a,, <g, cis e> |
+  d,8 a,, d, r |
+  a,,16( bes,, b,, c, cis, d, dis, e,) |
+  \key d \minor
+}
+
+violaoCoda = \relative c {
+  d,8 <f a d> c, <f a d> |
+  bes,,8 <d aes' d> bes,, <d aes' d> |
+  a,,8 <cis g' cis> a,, <cis g' cis> |
+  d,8 <f b d> d, r |
+}
+
+violaoSeteCordas = {
+  \clef "treble_8"
+  \violaoIntro
+  \violaoAOne
+  \violaoATwo
+  \violaoBOne
+  \violaoBTwo
+  \violaoAOne
+  \violaoAThree
+  \violaoCOne
+  \violaoCTwo
+  \violaoAOne
+  \violaoCoda
+}
+
+% ==========================================
+% PANDEIRO (Percussão)
+% ==========================================
+
+tambPattern = \drummode { tamb16 tamb8 tamb16 tamb8 tamb8 | }
+tambFill = \drummode { tamb16 tamb tamb tamb tamb16 tamb tamb tamb | }
+
+pandeiro = {
+  % Intro (4)
+  \repeat unfold 3 { \tambPattern } \tambFill
+  % A1 (8)
+  \repeat unfold 7 { \tambPattern } \tambFill
+  % A2 (8)
+  \repeat unfold 7 { \tambPattern } \tambFill
+  % B1 (8)
+  \repeat unfold 7 { \tambPattern } \tambFill
+  % B2 (8)
+  \repeat unfold 7 { \tambPattern } \tambFill
+  % A1 (8)
+  \repeat unfold 7 { \tambPattern } \tambFill
+  % A3 (8)
+  \repeat unfold 7 { \tambPattern } \tambFill
+  % C1 (8)
+  \repeat unfold 7 { \tambPattern } \tambFill
+  % C2 (8)
+  \repeat unfold 7 { \tambPattern } \tambFill
+  % A1 (8)
+  \repeat unfold 7 { \tambPattern } \tambFill
+  % Coda (4)
+  \repeat unfold 3 { \tambPattern }
+  \drummode { tamb8 tamb r4 | }
+}
+
+% ==========================================
+% MONTAGEM DA PARTITURA
+% ==========================================
 
 \score {
-  \new StaffGroup <<
+  <<
     \new Staff \with {
-      instrumentName = "Clarinete I em Sib"
-      shortInstrumentName = "Cl. I"
+      instrumentName = "Clarinete (Sib)"
+      shortInstrumentName = "Cl."
     } {
-      \clef treble
-      \transposition bes
-      \clarinetOne
+      \global
+      \clarinet
     }
+    
     \new Staff \with {
-      instrumentName = "Clarinete II em Sib"
-      shortInstrumentName = "Cl. II"
+      instrumentName = "Violão 7"
+      shortInstrumentName = "Vl.7"
     } {
-      \clef treble
-      \transposition bes
-      \clarinetTwo
+      \global
+      \violaoSeteCordas
+    }
+    
+    \new DrumStaff \with {
+      instrumentName = "Pandeiro"
+      shortInstrumentName = "Pand."
+    } {
+      \global
+      \pandeiro
     }
   >>
   \layout {
-    \context {
-      \Score
-      \override BarNumber.font-size = #1
-    }
+    indent = 2.0\cm
+    short-indent = 1.0\cm
   }
   \midi { }
 }
